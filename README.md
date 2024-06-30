@@ -10,11 +10,11 @@ Ensure you have the following installed on your system
   sudo apt install git
 ```
 
+
+### Stow
 ```bash
   sudo apt install stow
 ```
-
-### Stow
 
 ## Installation
 First, check out the dotfiles repo in you `$HOME` directory using git
