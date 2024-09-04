@@ -10,7 +10,6 @@ Ensure you have the following installed on your system
   sudo apt install git
 ```
 
-
 ### Stow
 ```bash
   sudo apt install stow
