@@ -6,6 +6,6 @@ if grep -q "microsoft-standard" /proc/version; then
   echo "Running on WSL2"
 else
   echo "Not running on WSL2"
-  source install-vscode.sh
-  source install-docker.sh
+  source ./install-vscode.sh
+  source ./install-docker.sh
 fi
