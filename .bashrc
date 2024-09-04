@@ -158,7 +158,7 @@ alias gcb='git switch -c'
 alias ze='zellij'
 bind -x '"\C-z": "zellij"'
 
-alias cat='batcat'
+alias cat='bat'
 alias ll='eza -l --icons'
 alias ls='eza --icons'
 alias la='eza --icons -a'
