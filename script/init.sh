@@ -14,4 +14,4 @@ curl -L https://nixos.org/nix/install | sh -s -- --daemon
 curl -fsSL https://get.jetify.com/devbox | bash
 
 ## install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
