@@ -9,10 +9,10 @@
 export EDITOR=nvim
 
 # If not running interactively, don't do anything
-case $- in
-*i*) ;;
-*) return ;;
-esac
+# case $- in
+# *i*) ;;
+# *) return ;;
+# esac
 
 # if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 # 	exec tmux
@@ -159,9 +159,9 @@ alias ze='zellij'
 bind -x '"\C-z": "zellij"'
 
 alias cat='batcat'
-alias ll='exa -l --icons'
-alias ls='exa --icons'
-alias la='exa --icons -a'
+alias ll='eza -l --icons'
+alias ls='eza --icons'
+alias la='eza --icons -a'
 alias c='xclip -selection clipboard'
 # alias v='xclip -o'
 
@@ -428,3 +428,5 @@ fi
 # if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 #   tmux attach || tmux >/dev/null 2>&1
 # fi
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
