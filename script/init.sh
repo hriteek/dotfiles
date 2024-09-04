@@ -15,3 +15,6 @@ curl -fsSL https://get.jetify.com/devbox | bash
 
 ## install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# install startship
+curl -sS https://starship.rs/install.sh | sh
