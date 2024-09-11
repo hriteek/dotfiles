@@ -232,6 +232,7 @@ export PATH=$PATH:$HOME/Applications/flutter/bin
 # https://github.com/commitizen/cz-cli#making-your-repo-commitizen-friendly
 alias czi="commitizen init cz-conventional-changelog --save-dev --save-exact"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init bash)"
 export _ZO_ECHO='1'
@@ -431,5 +432,3 @@ fi
 # if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 #   tmux attach || tmux >/dev/null 2>&1
 # fi
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
