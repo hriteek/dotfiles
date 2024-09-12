@@ -12,3 +12,14 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# Also need to configure to docker without sudo
+# Create a docker group
+sudo groupadd docker
+# Add your user to the docker group
+sudo usermod -aG docker $USER
+# Logout and log back in so that your goup membership is re-evaluated
+# Run the following command to activatte the changes to the group
+newgrp docker
+# Verify that you can run docker command without sudo
+docker run hello-world
