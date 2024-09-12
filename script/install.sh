@@ -1,7 +1,5 @@
-## Install TPM (tmux plugin manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 ## check if the system in wsl2 or not
+## also need to check if this is sever or not (if server we don't want to install vscode cli)
 if grep -q "microsoft-standard" /proc/version; then
   echo "Running on WSL2"
 else
