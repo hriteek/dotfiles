@@ -15,6 +15,7 @@ A way to track list of applications and things that I install in my machine. And
 - entr (file change watcher) - done
 - eza (alternative of ls) - done
 - fira code nerd font - added a command
+- fontconfig - done (to configure font)
 - fd (alternative of find) - done
 - fnm (fast node manager) - done
 - fzf - done
@@ -40,3 +41,21 @@ A way to track list of applications and things that I install in my machine. And
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+## Install vscode cli
+```bash
+curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+
+tar -xf vscode_cli.tar.gz
+
+## create symlinks
+sudo ln -s /home/hriteek/code /usr/local/bin/code
+
+## run vscode tunnel
+code tunnel
+```
+
+### How can I ensure I keep my tunnel running?
+You have a few options:
+- Use the service command to run as a service. You can run `code tunnel service install` and `code tunnel service uninstall` to install and remove them.
+- Use the no-sleep option, code tunnel --no-sleep, to prevent your remote machine from going to sleep.
