@@ -1,3 +1,5 @@
+brew install fontconfig
+
 # download the font
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 
