@@ -166,6 +166,7 @@ alias ll='eza -l --icons'
 alias ls='eza --icons'
 alias la='eza --icons -a'
 alias c='xclip -selection clipboard'
+alias copy='xclip -selection clipboard <'
 # alias v='xclip -o'
 
 ls="ls -hN --color=auto --group-directories-first"
@@ -181,11 +182,23 @@ alias cio="code-insiders ."
 alias cir="code-insiders -r ."
 alias cia="code-insiders -a ."
 
-alias su="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias su="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && command -v brew >/dev/null 2>&1 && brew update && brew upgrade"
 alias sr="snap refresh"
 alias vim="nvim"
 alias e="exit"
 alias cl="clear"
+
+# kubectl
+kc() {
+  if [ "$#" -eq 0 ]; then
+    # No argument provided, list contexts
+    kubectl config get-contexts
+  else
+    # Argument provided, set context
+    kubectl config use-context "$1"
+  fi
+}
+alias k="kubectl"
 
 # function as alias
 mc() { # create dir and move inside dir
@@ -427,8 +440,24 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env)"
 fi
+# eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd --shell bash)"
+# eval "$(fnm env)"
 
 # # start tmux on every shell login
 # if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 #   tmux attach || tmux >/dev/null 2>&1
 # fi
+alias python=python3
+export PATH="/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin":$PATH
+
+# encore
+export ENCORE_INSTALL="/home/hriteek/.encore"
+export PATH="$ENCORE_INSTALL/bin:$PATH"
+
+[[ -s "/home/hriteek/.gvm/scripts/gvm" ]] && source "/home/hriteek/.gvm/scripts/gvm"
+
+# Add VS Code and Code Insiders to PATH
+export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin"
+export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code Insiders/bin"
+export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin:$PATH"
