@@ -16,14 +16,14 @@ Ensure you have the following installed on your system
 ```
 
 ## Installation
-First, check out the dotfiles repo in you `$HOME` directory using git
+- First, check out the dotfiles repo in you `$HOME` directory using git
 
 ```bash
   git clone https://github.com/hriteek/dotfiles.git
   cd dotfiles
 ```
 
-then use GNU stow to create symlinks
+- then use GNU stow to create symlinks
 ```bash
   stow .
 ```
