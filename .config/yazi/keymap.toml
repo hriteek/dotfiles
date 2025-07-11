@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on  = [ "c", "y" ]
+run = "shell:cat {file} | xclip -selection clipboard"
+desc = "Copy the content of selected files to clipboard"
