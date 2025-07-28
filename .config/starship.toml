@@ -1,7 +1,7 @@
 # Insert a blank line between shell prompts
 add_newline = true
 [line_break]
-disabled = true
+disabled = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
