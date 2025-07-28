@@ -15,20 +15,20 @@ else
 fi
 
 # Check and install Nix
-if command_exists nix; then
-  echo "Nix is already installed."
-else
-  echo "Nix is not installed. Installing Nix..."
-  curl -L https://nixos.org/nix/install | sh -s -- --daemon
-fi
+# if command_exists nix; then
+#   echo "Nix is already installed."
+# else
+#   echo "Nix is not installed. Installing Nix..."
+#   curl -L https://nixos.org/nix/install | sh -s -- --daemon
+# fi
 
 # Check and install Devbox
-if command_exists devbox; then
-  echo "Devbox is already installed."
-else
-  echo "Devbox is not installed. Installing Devbox..."
-  curl -fsSL https://get.jetify.com/devbox | bash
-fi
+# if command_exists devbox; then
+#   echo "Devbox is already installed."
+# else
+#   echo "Devbox is not installed. Installing Devbox..."
+#   curl -fsSL https://get.jetify.com/devbox | bash
+# fi
 
 # Check and install Homebrew
 if command_exists brew; then
