@@ -1,21 +1,52 @@
-brew install fontconfig
+#!/usr/bin/env bash
 
-# download the font
-curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
+set -euo pipefail
 
-# unzip the font
-unzip FiraCode.zip -d FiraCode
+# Check if Homebrew is installed
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew is not installed. Please install Homebrew first."
+  exit 1
+fi
 
-# move the fonts to system fonts direcotry
-mkdir -p ~/.local/share/fonts/FiraCode
+echo "Updating Homebrew..."
+brew update
 
-mv FiraCode/* ~/.local/share/fonts/FiraCode/
+echo "Starting font installation..."
 
-# # move the fonts to system-wide direcory
-# sudo mv FiraCode/* /usr/share/fonts/
-#
-# update font cache
-fc-cache -fv
+FONT_NAME="FiraCode"
+FONT_VERSION="v3.2.1"
+FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/$FONT_VERSION/${FONT_NAME}.zip"
 
-# clean up
-rm -rf FiraCode.zip FiraCode
+# Determine font install path
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  FONT_DIR="$HOME/Library/Fonts/$FONT_NAME"
+else
+  FONT_DIR="$HOME/.local/share/fonts/$FONT_NAME"
+fi
+
+# Install fontconfig if not present
+if ! command -v fc-cache >/dev/null 2>&1; then
+  echo "Installing fontconfig..."
+  brew install fontconfig
+fi
+
+# Create a temp working dir
+TMP_DIR=$(mktemp -d)
+
+echo "📦 Downloading $FONT_NAME Nerd Font..."
+curl -Ls -o "$TMP_DIR/${FONT_NAME}.zip" "$FONT_URL"
+
+echo "📂 Unzipping font files..."
+unzip -q "$TMP_DIR/${FONT_NAME}.zip" -d "$TMP_DIR/$FONT_NAME"
+
+echo "📁 Installing to: $FONT_DIR"
+mkdir -p "$FONT_DIR"
+mv "$TMP_DIR/$FONT_NAME"/* "$FONT_DIR/"
+
+echo "🔄 Updating font cache..."
+fc-cache -fv "$FONT_DIR"
+
+echo "🧹 Cleaning up..."
+rm -rf "$TMP_DIR"
+
+echo "✅ $FONT_NAME font installed successfully!"
