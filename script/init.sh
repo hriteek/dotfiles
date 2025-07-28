@@ -14,6 +14,15 @@ else
   sudo apt-get install -y curl
 fi
 
+# Check and install git
+if command_exists git; then
+  echo "git is already installed."
+else
+  echo "git is not installed. Installing git..."
+  sudo apt-get update
+  sudo apt-get install -y git
+fi
+
 # Check and install Nix
 # if command_exists nix; then
 #   echo "Nix is already installed."
