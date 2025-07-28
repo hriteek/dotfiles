@@ -24,10 +24,10 @@ else
 fi
 
 # Check and install xclip
-if command_exists git; then
+if command_exists xclip; then
   echo "xclip is already installed."
 else
-  echo "xclip is not installed. Installing git..."
+  echo "xclip is not installed. Installing xclip..."
   sudo apt-get update
   sudo apt-get install -y xclip
 fi
