@@ -23,6 +23,15 @@ else
   sudo apt-get install -y git
 fi
 
+# Check and install xclip
+if command_exists git; then
+  echo "xclip is already installed."
+else
+  echo "xclip is not installed. Installing git..."
+  sudo apt-get update
+  sudo apt-get install -y xclip
+fi
+
 # Check and install Nix
 # if command_exists nix; then
 #   echo "Nix is already installed."
