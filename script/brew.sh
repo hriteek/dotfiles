@@ -21,6 +21,7 @@ packages=(
   htop
   lazygit
   jq
+  kanata
   kubectl
   neovim
   ripgrep
