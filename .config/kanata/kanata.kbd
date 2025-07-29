@@ -1,0 +1,24 @@
+;; Kanata configuration 
+
+(defsrc
+ caps
+ ralt
+ esc
+)
+
+(defvar
+ ;; 
+ tap-time 100
+ hold-time 100
+ hold-time-slow 300
+)
+
+(defalias
+ escctrl (tap-hold $tap-time $hold-time esc lctrl)
+)
+
+(deflayer base
+ @escctrl
+ bspc
+ caps
+)
