@@ -59,6 +59,7 @@ if id -nG "$USER" | grep -qw docker; then
 else
   echo "➕ Adding user '$USER' to 'docker' group..."
   sudo usermod -aG docker "$USER"
+  newgrp docker
   echo "ℹ️  You may need to log out and log back in for this to take effect."
 fi
 
