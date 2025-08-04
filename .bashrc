@@ -155,8 +155,8 @@ alias gl='git l3'
 alias grh='git reset --hard'
 alias gcb='git switch -c'
 
-alias ze='zellij'
-bind -x '"\C-z": "zellij"'
+# alias ze='zellij'
+# bind -x '"\C-z": "zellij"'
 
 # source bashrc
 alias srcbash='source ~/.bashrc'
@@ -461,3 +461,4 @@ export PATH="$ENCORE_INSTALL/bin:$PATH"
 export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin"
 export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code Insiders/bin"
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin:$PATH"
+alias cursor='/opt/cursor-1.3.7.AppImage --no-sandbox'
