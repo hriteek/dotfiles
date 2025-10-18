@@ -6,6 +6,12 @@
 # set -o vi
 # set show-mode-in-prompt on
 # bind '"jk":vi-movement-mode'
+# # Enable showing the mode
+# bind 'set show-mode-in-prompt on'
+# # Command (normal) mode → steady block
+# bind 'set vi-cmd-mode-string \1\e[2 q\2'
+# # Insert mode → steady bar
+# bind 'set vi-ins-mode-string \1\e[6 q\2'
 export EDITOR=nvim
 
 # If not running interactively, don't do anything
@@ -461,3 +467,6 @@ export PATH="$ENCORE_INSTALL/bin:$PATH"
 export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code/bin"
 export PATH="$PATH:/mnt/c/Users/User/AppData/Local/Programs/Microsoft VS Code Insiders/bin"
 export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin:$PATH"
+
+# opencode
+export PATH=/home/hriteek/.opencode/bin:$PATH
