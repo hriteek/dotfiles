@@ -161,8 +161,8 @@ alias gl='git l3'
 alias grh='git reset --hard'
 alias gcb='git switch -c'
 
-alias ze='zellij'
-bind -x '"\C-z": "zellij"'
+# alias ze='zellij'
+# bind -x '"\C-z": "zellij"'
 
 # source bashrc
 alias srcbash='source ~/.bashrc'
@@ -470,3 +470,4 @@ export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin:$PATH"
 
 # opencode
 export PATH=/home/hriteek/.opencode/bin:$PATH
+
