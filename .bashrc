@@ -1,3 +1,6 @@
+# # Kiro CLI pre block. Keep at the top of this file.
+# [[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash"
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -31,7 +34,10 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 # to enable ctrl+s to search forward in reverse-i-search
-stty -ixon
+# stty -ixon
+if [ -t 0 ]; then
+  stty -ixon 2>/dev/null
+fi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=
@@ -157,7 +163,7 @@ alias gb='git branch --show-current'
 alias gr='git remote --v'
 alias gsm='git switch master'
 alias gc='git switch -'
-alias gl='git l3'
+alias gl='git lg'
 alias grh='git reset --hard'
 alias gcb='git switch -c'
 
@@ -223,6 +229,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# Only run in interactive shells
+[[ $- != *i* ]] && return
+
+# Skip dumb terminals
+[[ "$TERM" == "dumb" ]] && return
 
 # starship.rs
 eval "$(starship init bash)"
@@ -471,3 +483,17 @@ export PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.4.0/bin:$PATH"
 # opencode
 export PATH=/home/hriteek/.opencode/bin:$PATH
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Kiro CLI post block. Keep at the bottom of this file.
+# [[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
+
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
