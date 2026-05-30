@@ -1,0 +1,10 @@
+customCommands:
+  - key: '<c-k>' # The key you want to press (Shift+C in this case)
+    command: 'git cmt "{{.Form.Message}}"' # Calls your git alias
+    description: 'Commit using my custom alias'
+    context: 'files' # Shows this option when in the Files panel
+    prompts:
+      - type: 'input'
+        title: 'Commit using my custom alias'
+        key: 'Message'
+    output: terminal
