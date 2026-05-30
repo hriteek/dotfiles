@@ -1,6 +1,9 @@
-# # Kiro CLI pre block. Keep at the top of this file.
-# [[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash"
 
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.pre.bash"
+
+# # Kiro CLI pre block. Keep at the top of this file.
+# 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -177,8 +180,8 @@ alias cat='bat'
 alias ll='eza -l --icons'
 alias ls='eza --icons'
 alias la='eza --icons -a'
-alias c='xclip -selection clipboard'
-alias copy='xclip -selection clipboard <'
+alias c='wl-copy'
+alias copy='wl-copy <'
 # alias v='xclip -o'
 
 ls="ls -hN --color=auto --group-directories-first"
@@ -488,8 +491,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Kiro CLI post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash"
-
+# 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
@@ -497,3 +499,11 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/bashrc.post.bash"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/hriteek/.local/bin:$PATH"
