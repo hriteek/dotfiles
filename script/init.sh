@@ -23,13 +23,13 @@ else
   sudo apt-get install -y git
 fi
 
-# Check and install xclip
-if command_exists xclip; then
-  echo "xclip is already installed."
+# Check and install wl-clipboard
+if command_exists wl-copy; then
+  echo "wl-clipboard is already installed."
 else
-  echo "xclip is not installed. Installing xclip..."
+  echo "wl-clipboard is not installed. Installing wl-clipboard..."
   sudo apt-get update
-  sudo apt-get install -y xclip
+  sudo apt-get install -y wl-clipboard
 fi
 
 # Check and install Nix
