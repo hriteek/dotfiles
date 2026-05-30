@@ -1,4 +1,4 @@
 [[mgr.prepend_keymap]]
 on  = [ "c", "y" ]
-run = "shell:cat {file} | xclip -selection clipboard"
+run = "shell:cat {file} | wl-copy"
 desc = "Copy the content of selected files to clipboard"
